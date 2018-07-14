@@ -35,3 +35,13 @@ $red: #b94a48;
   border-color: $dark-pink;
   color: $red;
 }
+
+.uk-navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: inherit;
+}
+
+.uk-navbar-brand:hover {
+  color: inherit;
+}

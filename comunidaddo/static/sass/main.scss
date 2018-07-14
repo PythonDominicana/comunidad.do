@@ -1,0 +1,30 @@
+
+
+@import "variables.scss";
+//@import "custom.scss";
+//
+// Core
+//
+
+@import "theme/_import.scss";
+@import "components/_import.scss";
+
+
+$base-body-font-family: 'Fira Sans', sans-serif;
+$global-font-family: 'Fira Sans', sans-serif;
+
+$light: 200;
+$semi-bold: 400;
+$bold: 600;
+
+/// 12 columns grid
+$main-color: #CF0000;
+$header-color: #4d5a71;
+$copy-color: #9B9B9B;
+
+
+body, .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, h1, h2, h3, h4, h5, h6  {
+  font-family: $base-body-font-family;
+
+}
+
