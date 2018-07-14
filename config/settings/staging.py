@@ -115,9 +115,3 @@ INSTALLED_APPS += ['gunicorn']  # noqa F405
 # https://github.com/antonagestam/collectfast#installation
 INSTALLED_APPS = ['collectfast'] + INSTALLED_APPS  # noqa F405
 AWS_PRELOAD_METADATA = True
-
-# raven
-# ------------------------------------------------------------------------------
-# https://docs.sentry.io/clients/python/integrations/django/
-INSTALLED_APPS += ['raven.contrib.django.raven_compat']  # noqa F405
-MIDDLEWARE = ['raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware'] + MIDDLEWARE
