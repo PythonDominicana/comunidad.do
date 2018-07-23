@@ -2,6 +2,7 @@ from django.contrib import admin
 from django import forms
 from .models import Event, Region
 
+
 class EventAdminForm(forms.ModelForm):
 
     class Meta:
@@ -23,11 +24,9 @@ class EventAdmin(admin.ModelAdmin):
         'publish_date', 'address', 'country', 'city']
 
 
-
 class RegionAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug', 'created', 'last_updated']
 
 
 admin.site.register(Region, RegionAdmin)
 admin.site.register(Event, EventAdmin)
-
