@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'events:event_list' %}">Event Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>slug</td>
+    <td>title</td>
+    <td>description</td>
+    <td>url</td>
+    <td>image</td>
+    <td>start_date</td>
+    <td>end_date</td>
+    <td>address</td>
+    <td>country</td>
+    <td>city</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.slug }}</td>
+    <td>{{ object.title }}</td>
+    <td>{{ object.description }}</td>
+    <td>{{ object.url }}</td>
+    <td>{{ object.image }}</td>
+    <td>{{ object.start_date }}</td>
+    <td>{{ object.end_date }}</td>
+    <td>{{ object.address }}</td>
+    <td>{{ object.country }}</td>
+    <td>{{ object.city }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'events:event_create' %}">Create new Event</a>
+{% endblock %}

@@ -4,7 +4,6 @@ from django.db import models
 from django_extensions.db import fields as extension_fields
 
 
-
 class Event(models.Model):
     slug = extension_fields.AutoSlugField(
         populate_from='title', blank=True)
@@ -33,7 +32,6 @@ class Event(models.Model):
     region = models.ForeignKey(
         "region", on_delete=models.CASCADE)
 
-
     class Meta:
         ordering = ('-created',)
 
@@ -53,13 +51,11 @@ class Region(models.Model):
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
 
-
     class Meta:
         ordering = ('-created',)
 
-
     def __str__(self):
-        return f'Region: {self.slug}'
+        return f'{self.name}'
 
     def get_absolute_url(self):
         return reverse('events_region_detail', args=(self.slug,))
