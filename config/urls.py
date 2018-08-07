@@ -6,10 +6,14 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("",
+         TemplateView.as_view(
+             template_name="pages/home.html"),
+         name="home"),
     path(
         "about/",
-        TemplateView.as_view(template_name="pages/about.html"),
+        TemplateView.as_view(
+            template_name="pages/about.html"),
         name="about",
     ),
     # Django Admin, use {% url 'admin:index' %}
@@ -18,6 +22,10 @@ urlpatterns = [
     path(
         "users/",
         include("comunidaddo.users.urls", namespace="users"),
+    ),
+    path(
+        "events/",
+        include("comunidaddo.events.urls", namespace="events"),
     ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
